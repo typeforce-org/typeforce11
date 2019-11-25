@@ -6,22 +6,23 @@ var Main = (function($) {
       breakpoint_large = false,
       breakpoint_array = [480,600,1200],
       $document,
-      variableStyleEl;
+      documentElementStyle;
 
   // User sensor data
-  var userX = 0;
-  var userY = 0;
+  var userX = 0.5;
+  var userY = 0.5;
 
   // Debugging Options / Vars
   var enableAxis = false;
   var enableKeyPositioning = false;
   var displayCoords = false;
+  var displayBoxes = false;
 
 
   function _init() {
 
     $document = $(document);
-    variableStyleEl = document.documentElement.style;
+    documentElementStyle = document.documentElement.style;
 
     // Set screen size vars
     _resize();
@@ -65,25 +66,32 @@ var Main = (function($) {
     }
 
     // See if any of the debugging options are present in query string vars
-    if ( typeof vars.displayCoords !== 'undefined' ) { displayCoords = vars.displayCoords; }
+    if ( typeof vars.coords !== 'undefined' ) { displayCoords = vars.coords; }
+    if ( typeof vars.boxes !== 'undefined' ) { displayBoxes = vars.boxes; }
+
+    // Init any debugging options
+
+
+    // UI for testing acceleromater
+    if(displayCoords) { $('body').append('<div class="user-coords"></div>'); }
+
+    // UI for testing acceleromater
+    if(displayBoxes) { $('body').addClass('debug-boxes'); }
   }
 
 
   function passUserCoordsToCSS() {
     // Update CSS
-    variableStyleEl.setProperty('--user-x', userX);
-    variableStyleEl.setProperty('--user-y', userY);
+    documentElementStyle.setProperty('--user-x', userX);
+    documentElementStyle.setProperty('--user-y', userY);
   }
 
-  // Get the position of the users sensor (mouse of phone accelerometer) and map in a unit cartesian space [-1,1] for both x,y
+  // Get the position of the users sensor (mouse of phone accelerometer) and map in a unit cartesian space [0,1] for both x,y
   function initUserPositioning() {
 
     // For throttling
     var lastMove = 0;
     var eventThrottle = 10;
-
-    // UI for testing acceleromater
-    if(displayCoords) { $('body').append('<div class="user-coords"></div>'); }
 
     console.log('Modernizr');
     console.log(Modernizr);
@@ -107,12 +115,18 @@ var Main = (function($) {
           }
 
           // Adjust position based on phone's angles
-          userX = -Math.min(Math.max((event.gamma/90)*5,-1),1); // gamma: left to right  (negative to invert, multipliers and cutoffs are fine tunings to the mapping based on testing)
-          userY = -Math.min(Math.max(((event.beta-45)/90)*2,-1),1); // beta: up and down
+          var gammaUnit = (event.gamma+45)/90; // 45deg rotation in either direction gives range [0,1]
+          var gammaUnitAdjusted = gammaUnit*2; // Maybe we want to vary more dramatically
+          userX = Math.min(Math.max( gammaUnitAdjusted ,0),1); // Create strict [0,1] limit
+
+          var betaUnit = (event.beta)/90; // 0-90deg rotation gives range [0,1]
+          var betaUnitAdjusted = betaUnit*1; // Maybe we want to vary more dramatically
+          userY = Math.min(Math.max( betaUnitAdjusted ,0),1); // Create strict [0,1] limit
+
 
           // Update CSS
-          variableStyleEl.setProperty('--user-x', userX);
-          variableStyleEl.setProperty('--user-y', userY);
+          documentElementStyle.setProperty('--user-x', userX);
+          documentElementStyle.setProperty('--user-y', userY);
         }
 
         passUserCoordsToCSS();
@@ -141,9 +155,9 @@ var Main = (function($) {
           var windowWidth = window.innerWidth;
           var windowHeight = window.innerHeight;
 
-          // Map mouse x position to continuum [-1,1]
-          userX = (mouseX/windowWidth)*2-1;
-          userY = (mouseY/windowHeight)*2-1;
+          // Map mouse x position to continuum [0,1]
+          userX = (mouseX/windowWidth);
+          userY = (mouseY/windowHeight);
 
           // Update debugging UI
           if(displayCoords) {

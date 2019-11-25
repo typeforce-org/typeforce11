@@ -1,68 +1,90 @@
 @keyframes zoom {
   from {
-    background-size: 100%;
+    background-size: 200%;
   }
   to {
-    background-size: 200%;
+    background-size: 300%;
   }
 }
 
 .site-header {
-  overflow: hidden;
+  height: 70vh;
   position: relative;
-  padding: 30px 36px;
+  padding: 36px 30px 60px;
+  min-height: calc(24px + 3*36px + 45vw + 72px + 5*36px);
 
   @include media-md {
-    padding: 42px 72px;
+    height: 85vh;
+    min-height: auto;
+    padding: 42px 72px 60px;
   }
   
   &::before {
-    // backface-visibility: hidden;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: -1;
     content: '';
-    animation: zoom 5s infinite ease-out alternate;
     position: absolute;
+    background-size: 200%;
+    animation: zoom 3s infinite linear alternate;
     background-image: url('/assets/images/gradient.jpg');
-    background-position: calc(50% * var(--user-x,0) + 50%) calc(50% * var(--user-y,0) + 50%);
+    background-position: calc(100% * var(--user-x,0)) calc(100% * var(--user-y,0));
+  }
+
+  .eleven-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:  45vw;
+    top: 3*36px + 24px;
+    position: absolute;
+    @include media-md {
+      top: auto;
+      bottom: 60px;
+      height:  calc(85vh - 204px);
+    }
   }
 
   .eleven {
-    @include clearfix;
-    height: 66vh; //85vh * (7/9);
+    top: 0;
+    left: 0;
     width: 100%;
-    transform: translateX(-10vh);
-  
-    .one {
-      float: left;
-      width: calc(50% - 4px);
-      height: 100%;
-      background-image: url('/assets/images/gradient.jpg');
-      background-size: 300%;
-      background-position: calc(50% * -1 * var(--user-x,0) + 50%) calc(50% * -1 * var(--user-y,0) + 50%);
-    
-      mask-image: url('/assets/images/one.png');
-      mask-repeat: no-repeat;
-      mask-size: 33vh 100%; //calc(50% * var(--user-x,0) + 50%) 100%;
+    height: 100%;
+    color: transparent;
+    text-align: center;
+    position: absolute;
+    pointer-events: none;
+    background-size: 150%;
+    background-clip: text;
+    font-family: 'variable-one';
+    -webkit-background-clip: text;
+    background-image: url('/assets/images/gradient.jpg');
+    background-position: calc(100% * ( 1 - var(--user-x,0)) ) calc(100% * ( 1 - var(--user-y,0)) );
+ 
+    // Magic text sizing numbers to get the glyphs to be full height
+    // (for more clarity, view in boxes debug mode by appending to URL: ?boxes=true)
+    line-height: 0.57; 
+    font-size: calc(45vw * 1.41); // 1.41 is a magic number, multiply it by container height
 
+    @include media-md {
+      font-size: calc((85vh - 204px) * 1.41); 
+    }
+
+    span {
       &:nth-of-type(1) {
-        mask-position: right;
-        transform: scaleX(calc(-1 * var(--user-x,0)*1.5 + 1.5));
-        transform-origin: 100% 100%;
-        margin-right: 8px;
+        font-variation-settings: 'wght' calc( 900 - 900 * var(--user-x,0) );
       }
       &:nth-of-type(2) {
-        transform: scaleX(calc(var(--user-x,0)*1.5 + 1.5));
-        transform-origin: 0 0;
+        font-variation-settings: 'wght' calc( 900 * var(--user-x,0) );
       }
     }
   }
 
   .banner {
-    position: relative;
     z-index: 1;
+    position: relative;
     text-align: center;
     padding-bottom: 30px;
 
@@ -78,7 +100,7 @@
     }
 
     .quarter {
-      margin-top: 50vh;
+      margin-top: calc(45vw + 5*36px);
 
       @include media-md {
         margin-top: 0;
@@ -88,12 +110,57 @@
   }
 
   .apply-button {
-    display: none;
-  }
+    @include font-h1;
+    z-index: 1;
+    position: absolute;
+    border: 2px solid black;
+    text-transform: lowercase;
+    border-radius: 88px;
+    padding: 8px 31px 16px;
 
-  padding: 36px 30px 60px;
+    &:hover {
+      background: $black;
+      color: $white;
+    }
 
-  @include media-md {
-    padding: 42px 72px 60px;
+    &.-first {
+      transform: rotate(30deg)  translate(-25%,-30%); 
+      top: 0;
+      left: 0;
+    }
+
+    &.-second {
+      transform: rotate(-45deg) translate(70%,-30%); 
+      top: 40%;
+      right: 0;
+    }
+
+    &.-third {
+      transform: rotate(-30deg) translate(-70%,-40%); 
+      bottom: -10%;
+      left: 50%;
+    }
+
+
+    @include media-md {
+      padding: 8px 50px 18px;
+
+      &.-first {
+        transform: rotate(30deg)  translate(-60%,0); 
+        top: 0;
+        left: 40%;
+      }
+
+      &.-second {
+        transform: rotate(-30deg) translate(0,-50%);
+        top: 50%;
+        right: 0%;
+      }
+
+
+      &.-third {
+        display: none;
+      }
+    }
   }
 }

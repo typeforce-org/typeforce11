@@ -1,3 +1,12 @@
+@keyframes flicker {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+
 .content-wrap {
   @include font-smoothing;
   color: $white;
@@ -7,6 +16,19 @@
   @include media-md {
     padding: 54px 72px 60px;
   }
+
+  a {
+    display: inline-block;
+
+    &:hover {
+      color: transparent;
+      -webkit-background-clip: text;
+      background-image: url('/assets/images/gradient.jpg');
+      background-size: 300%;
+
+      animation: flicker 0.4s infinite linear;
+    }
+  }
 }
 
 .site-main {
@@ -14,6 +36,16 @@
 
   p {
     margin-top: (24/21)*1em;
+  }
+
+  h2 {
+    margin-top: (24/21)*1em;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    @include media-lg {
+      margin-top: (24/21)*2em;
+    }
   }
 
   li {

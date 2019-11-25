@@ -6,4 +6,15 @@
   color: black;
   position: fixed;
   border: 1px solid black;
+  z-index: 100;
+}
+
+body.debug-boxes {
+  .eleven {
+    border: 1px dotted red;
+
+    span {
+      border: 1px dotted black;
+    }
+  }
 }

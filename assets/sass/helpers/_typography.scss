@@ -8,7 +8,17 @@
   font-style: normal;
 }
 
+// Fonts
+@font-face {
+  font-family: 'variable-one';
+  src: url('/assets/fonts/variable-one.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 $display: 'Telegraf-UltraBold', sans-serif;
+
 
 @mixin font-h1 {
   font-family: $display;

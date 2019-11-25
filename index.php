@@ -58,31 +58,34 @@
         </div>
         <div class="module quarter">
           <p class="announcement">
-            Application<br>
+            Submission<br>
             Deadline<br>
             1 — 3 — 20
           </p>
         </div>
       </div>
-      <a href="<?= $cta_url ?>" class="apply-button">Apply</a>
-      <a href="<?= $cta_url ?>" class="apply-button" aria-hidden="true">Apply</a>
-      <a href="<?= $cta_url ?>" class="apply-button" aria-hidden="true">Apply</a>
-      <div class="eleven">
-        <div class="one"><!-- <?php include 'assets/svgs/one.svg' ?> --></div>
-        <div class="one"><!-- <?php include 'assets/svgs/one.svg' ?> --></div>
+      <div class="eleven-container">
+        <a href="<?= $cta_url ?>" class="apply-button -first">Apply</a>
+        <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true">Apply</a>
+        <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true">Apply</a>
+        <div class="eleven" aria-hidden="true">
+          <span>1</span><span>1</span>
+        </div>
       </div>
     </header>
     <div class="content-wrap">
       <main class="site-main row">
         <div class="half module">
+          <h2>Typeforce</h2>
+          <p>An annual exhibit celebrating wildly talented, emerging typographic artists and designers.</p>
           <h2>Eligibility</h2>
-          <p>All type and typography related entries are eligible. This is not a Typeface design exhibition, however, so please only include works that are gallery friendly. Submissions can be by anyone associated with the entry (studio or individual).</p>
+          <p>All type and typography related entries are eligible. This is not a Typeface design exhibition, so please only include work that’s gallery friendly. Ideal submissions are a series of pieces or enough work to take up a 10'×10' wall. Submissions can be by anyone associated with the entry (studio or individual).</p>
         </div>
         <div class="quarter module">
           <h2>Contact</h2>
           <p>
             For questions email:<br>
-            <a href="mailto:info@typeforce.com" class="breakable"><span>info@</span><span>typeforce.com</span></a>
+            <a href="mailto:info@typeforce.com">info@typeforce.com</a>
           </p>
         </div>
         <div class="quarter module">
@@ -101,12 +104,12 @@
         </div>
         <div class="quarter module">
           <h2>Design</h2>
-          <p>Nermin Moufti + Will Miller</p>
+          <p><a href="https://www.instagram.com/nmoufti">Nermin Moufti</a> + <a href="https://www.instagram.com/q_type">Will Miller</a></p>
           <h2>Development</h2>
           <p><a href="https://barefootfunk.com">Bryant Smith</a></p>
         </div>
         <div class="quarter module">
-          <p>©Typeforce 2019</p>
+          <p><a href="https://typeforce.com">©Typeforce 2019</a></p>
         </div>
       </footer>
     </div>
