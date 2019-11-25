@@ -1,0 +1,46 @@
+// Typography
+
+// Fonts
+@font-face {
+  font-family: 'Telegraf-UltraBold';
+  src: url('/assets/fonts/Telegraf-UltraBold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$display: 'Telegraf-UltraBold', sans-serif;
+
+@mixin font-h1 {
+  font-family: $display;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: -.035em;
+  font-size: 42px;
+  line-height: (48/42);
+
+  @include media-md {
+    font-size: 126px;
+    line-height: (120/126);
+  }
+}
+
+@mixin font-p {
+  font-family: $display;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 21px;
+  line-height: (24/21);
+}
+
+@mixin font-p2 {
+  font-family: $display;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  line-height: (18/14);
+}

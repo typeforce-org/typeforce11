@@ -1,0 +1,99 @@
+@keyframes zoom {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 200%;
+  }
+}
+
+.site-header {
+  overflow: hidden;
+  position: relative;
+  padding: 30px 36px;
+
+  @include media-md {
+    padding: 42px 72px;
+  }
+  
+  &::before {
+    // backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    animation: zoom 5s infinite ease-out alternate;
+    position: absolute;
+    background-image: url('/assets/images/gradient.jpg');
+    background-position: calc(50% * var(--user-x,0) + 50%) calc(50% * var(--user-y,0) + 50%);
+  }
+
+  .eleven {
+    @include clearfix;
+    height: 66vh; //85vh * (7/9);
+    width: 100%;
+    transform: translateX(-10vh);
+  
+    .one {
+      float: left;
+      width: calc(50% - 4px);
+      height: 100%;
+      background-image: url('/assets/images/gradient.jpg');
+      background-size: 300%;
+      background-position: calc(50% * -1 * var(--user-x,0) + 50%) calc(50% * -1 * var(--user-y,0) + 50%);
+    
+      mask-image: url('/assets/images/one.png');
+      mask-repeat: no-repeat;
+      mask-size: 33vh 100%; //calc(50% * var(--user-x,0) + 50%) 100%;
+
+      &:nth-of-type(1) {
+        mask-position: right;
+        transform: scaleX(calc(-1 * var(--user-x,0)*1.5 + 1.5));
+        transform-origin: 100% 100%;
+        margin-right: 8px;
+      }
+      &:nth-of-type(2) {
+        transform: scaleX(calc(var(--user-x,0)*1.5 + 1.5));
+        transform-origin: 0 0;
+      }
+    }
+  }
+
+  .banner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 30px;
+
+    @include media-md {
+      text-align: left;
+    }
+
+    .three-quarters {
+      @include media-md {
+        margin-top: 0;
+        width: 75%;
+      }
+    }
+
+    .quarter {
+      margin-top: 50vh;
+
+      @include media-md {
+        margin-top: 0;
+        width: 25%;
+      }
+    }
+  }
+
+  .apply-button {
+    display: none;
+  }
+
+  padding: 36px 30px 60px;
+
+  @include media-md {
+    padding: 42px 72px 60px;
+  }
+}

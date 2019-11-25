@@ -1,0 +1,34 @@
+.row {
+  @include clearfix;
+}
+
+.module {
+  float: left;
+  @include media-lg {
+    padding-right: 32px;
+  }
+}
+
+.half {
+  width: 100%;
+
+  @include media-lg {
+    width: 50%;
+  }
+}
+
+.quarter {
+  width: 100%;
+
+  @include media-lg {
+    width: 25%;
+  }
+}
+
+.three-quarters {
+  width: 100%;
+
+  @include media-lg {
+    width: 75%;
+  }
+}

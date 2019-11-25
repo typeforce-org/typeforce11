@@ -1,0 +1,44 @@
+// Hardware Acceleration
+@mixin hardware-acceleration {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+// Font Smoothing
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.font-smoothing { @include font-smoothing; }
+
+// Remove list stylyings for lists that are only semantic
+@mixin semantic-only-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.semantic-only-list {
+  @include semantic-only-list;
+}
+
+// Hide, but not from screen readers...
+@mixin sr-only {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  width: 1px !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow: hidden;
+}
+.sr-only {
+  @include sr-only;
+}
+
+
+.breakable {
+  span {
+    display: inline-block;
+  }
+}
