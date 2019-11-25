@@ -52,25 +52,21 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="banner row">
-        <div class="module three-quarters">
-          <h1 class="title">Typeforce 11</h1>
+      <div class="header-wrap">  
+        <h1 class="title">Typeforce 11</h1>
+        <div class="theater">
+          <a href="<?= $cta_url ?>" class="apply-button -first">Apply</a>
+          <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true" tabindex='-1'>Apply</a>
+          <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true" tabindex='-1'>Apply</a>
+          <div class="eleven" aria-hidden="true">
+            <span>1</span><span>1</span>
+          </div>
         </div>
-        <div class="module quarter">
-          <p class="announcement">
-            Submission<br>
-            Deadline<br>
-            1 — 3 — 20
-          </p>
-        </div>
-      </div>
-      <div class="eleven-container">
-        <a href="<?= $cta_url ?>" class="apply-button -first">Apply</a>
-        <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true" tabindex='-1'>Apply</a>
-        <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true" tabindex='-1'>Apply</a>
-        <div class="eleven" aria-hidden="true">
-          <span>1</span><span>1</span>
-        </div>
+        <p class="announcement">
+          Submission<br>
+          Deadline<br>
+          1 — 3 — 20
+        </p>
       </div>
     </header>
     <div class="content-wrap">

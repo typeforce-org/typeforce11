@@ -496,7 +496,7 @@ a {
   text-decoration: none;
 }
 
-@keyframes zoom {
+@keyframes background-zoom {
   from {
     background-size: 200%;
   }
@@ -505,43 +505,53 @@ a {
   }
 }
 .site-header {
-  height: 70vh;
+  min-height: 70vh;
   position: relative;
-  padding: 36px 30px 60px;
-  min-height: calc(24px + 3*36px + 45vw + 72px + 5*36px);
+  padding: 36px 0 60px;
+  background-size: 200%;
+  background-image: url("/assets/images/gradient.jpg");
+  animation: background-zoom 3s infinite linear alternate;
+  background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
 }
 @media screen and (min-width: 700px) {
   .site-header {
     height: 85vh;
     min-height: auto;
-    padding: 42px 72px 60px;
+    padding: 42px 0 60px;
   }
 }
-.site-header::before {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  background-size: 200%;
-  animation: zoom 3s infinite linear alternate;
-  background-image: url("/assets/images/gradient.jpg");
-  background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
+.site-header .header-wrap {
+  position: relative;
 }
-.site-header .eleven-container {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 45vw;
-  top: 132px;
-  position: absolute;
+.site-header .title, .site-header .announcement {
+  z-index: 1;
+  text-align: center;
 }
 @media screen and (min-width: 700px) {
-  .site-header .eleven-container {
-    top: auto;
-    bottom: 60px;
+  .site-header .title, .site-header .announcement {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 700px) {
+  .site-header .title {
+    padding-left: 72px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .site-header .announcement {
+    position: absolute;
+    top: 0;
+    left: 75%;
+  }
+}
+.site-header .theater {
+  height: 45vw;
+  position: relative;
+  margin: 72px 0 108px;
+}
+@media screen and (min-width: 700px) {
+  .site-header .theater {
+    margin: 78px 0 0;
     height: calc(85vh - 204px);
   }
 }
@@ -573,32 +583,6 @@ a {
 }
 .site-header .eleven span:nth-of-type(2) {
   font-variation-settings: "wght" calc( 900 * var(--user-x,0.5) );
-}
-.site-header .banner {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  padding-bottom: 30px;
-}
-@media screen and (min-width: 700px) {
-  .site-header .banner {
-    text-align: left;
-  }
-}
-@media screen and (min-width: 700px) {
-  .site-header .banner .three-quarters {
-    margin-top: 0;
-    width: 75%;
-  }
-}
-.site-header .banner .quarter {
-  margin-top: calc(45vw + 5*36px);
-}
-@media screen and (min-width: 700px) {
-  .site-header .banner .quarter {
-    margin-top: 0;
-    width: 25%;
-  }
 }
 .site-header .apply-button {
   font-family: "Telegraf-UltraBold", sans-serif;

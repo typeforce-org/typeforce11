@@ -1,4 +1,4 @@
-@keyframes zoom {
+@keyframes background-zoom {
   from {
     background-size: 200%;
   }
@@ -8,42 +8,55 @@
 }
 
 .site-header {
-  height: 70vh;
+  min-height: 70vh;
   position: relative;
-  padding: 36px 30px 60px;
-  min-height: calc(24px + 3*36px + 45vw + 72px + 5*36px);
+  padding: 36px 0 60px;
+  background-size: 200%;
+  background-image: url('/assets/images/gradient.jpg');
+  animation: background-zoom 3s infinite linear alternate;
+  background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
 
   @include media-md {
     height: 85vh;
     min-height: auto;
-    padding: 42px 72px 60px;
-  }
-  
-  &::before {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    content: '';
-    position: absolute;
-    background-size: 200%;
-    animation: zoom 3s infinite linear alternate;
-    background-image: url('/assets/images/gradient.jpg');
-    background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
+    padding: 42px 0 60px;
   }
 
-  .eleven-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height:  45vw;
-    top: 3*36px + 24px;
-    position: absolute;
+  .header-wrap {
+    position: relative;
+  }
+
+  .title, .announcement {
+    z-index: 1;
+    text-align: center;
+
     @include media-md {
-      top: auto;
-      bottom: 60px;
-      height:  calc(85vh - 204px);
+      text-align: left;
+    }
+  }
+
+  .title {
+    @include media-md {
+      padding-left: 72px;
+    }
+  }
+
+  .announcement {
+    @include media-md {
+      position: absolute;
+      top: 0;
+      left: 75%;
+    }
+  }
+
+  .theater {
+    height:  45vw;
+    position: relative;
+    margin: 72px 0 108px;
+
+    @include media-md {
+      margin: 78px 0 0;
+      height: calc(85vh - 204px); // The height needed to ensure the header is height 85vh
     }
   }
 
@@ -78,33 +91,6 @@
       }
       &:nth-of-type(2) {
         font-variation-settings: 'wght' calc( 900 * var(--user-x,0.5) );
-      }
-    }
-  }
-
-  .banner {
-    z-index: 1;
-    position: relative;
-    text-align: center;
-    padding-bottom: 30px;
-
-    @include media-md {
-      text-align: left;
-    }
-
-    .three-quarters {
-      @include media-md {
-        margin-top: 0;
-        width: 75%;
-      }
-    }
-
-    .quarter {
-      margin-top: calc(45vw + 5*36px);
-
-      @include media-md {
-        margin-top: 0;
-        width: 25%;
       }
     }
   }
