@@ -528,7 +528,7 @@ a {
   background-size: 200%;
   animation: zoom 3s infinite linear alternate;
   background-image: url("/assets/images/gradient.jpg");
-  background-position: calc(100% * var(--user-x,0)) calc(100% * var(--user-y,0));
+  background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
 }
 .site-header .eleven-container {
   top: 0;
@@ -559,7 +559,7 @@ a {
   font-family: 'variable-one';
   -webkit-background-clip: text;
   background-image: url("/assets/images/gradient.jpg");
-  background-position: calc(100% * ( 1 - var(--user-x,0)) ) calc(100% * ( 1 - var(--user-y,0)) );
+  background-position: calc(100% * ( 1 - var(--user-x,0.8)) ) calc(100% * ( 1 - var(--user-y,0.8)) );
   line-height: 0.57;
   font-size: calc(45vw * 1.41);
 }
@@ -569,10 +569,10 @@ a {
   }
 }
 .site-header .eleven span:nth-of-type(1) {
-  font-variation-settings: "wght" calc( 900 - 900 * var(--user-x,0) );
+  font-variation-settings: "wght" calc( 900 - 900 * var(--user-x,0.5) );
 }
 .site-header .eleven span:nth-of-type(2) {
-  font-variation-settings: "wght" calc( 900 * var(--user-x,0) );
+  font-variation-settings: "wght" calc( 900 * var(--user-x,0.5) );
 }
 .site-header .banner {
   z-index: 1;

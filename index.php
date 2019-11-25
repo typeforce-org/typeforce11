@@ -66,8 +66,8 @@
       </div>
       <div class="eleven-container">
         <a href="<?= $cta_url ?>" class="apply-button -first">Apply</a>
-        <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true">Apply</a>
-        <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true">Apply</a>
+        <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true" tabindex='-1'>Apply</a>
+        <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true" tabindex='-1'>Apply</a>
         <div class="eleven" aria-hidden="true">
           <span>1</span><span>1</span>
         </div>
@@ -76,7 +76,7 @@
     <div class="content-wrap">
       <main class="site-main row">
         <div class="half module">
-          <h2>Typeforce</h2>
+          <h2><a href="https://typeforce.com">Typeforce</a></h2>
           <p>An annual exhibit celebrating wildly talented, emerging typographic artists and designers.</p>
           <h2>Eligibility</h2>
           <p>All type and typography related entries are eligible. This is not a Typeface design exhibition, so please only include work that’s gallery friendly. Ideal submissions are a series of pieces or enough work to take up a 10'×10' wall. Submissions can be by anyone associated with the entry (studio or individual).</p>
