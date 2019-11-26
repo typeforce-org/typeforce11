@@ -90,13 +90,25 @@
   }
 }
 
-@mixin media-md() { // Desktop
+@mixin media-md() {
   @media screen and (min-width: $breakpoint-medium) {
     @content;
   }
 }
 
-@mixin media-lg() { // Desktop
+@mixin media-lg() {
+  @media screen and (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin media-md-only() { 
+  @media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-large - 1) {
+    @content;
+  }
+}
+
+@mixin media-lg-only() {
   @media screen and (min-width: $breakpoint-large) {
     @content;
   }
