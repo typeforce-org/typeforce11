@@ -1,9 +1,9 @@
 <?php
   $title = 'Typeforce 11';
-  $description = '';
+  $description = 'Typeforce 11: the annual Chicago-based exhibit celebrating type is now open for submissions.';
   $image = 'http://typeforce.com/11/assets/images/social-media-sharing.jpg';
-  $imageW = 1300;
-  $imageH = 650;
+  $imageW = 2400;
+  $imageH = 1350;
   $url = 'http://typeforce.com/11/';
   $author = 'Bryant Smith';
   $cta_url = '#';

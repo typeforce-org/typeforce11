@@ -381,7 +381,8 @@ table {
 }
 @font-face {
   font-family: 'Telegraf-UltraBold';
-  src: url("/assets/fonts/Telegraf-UltraBold.otf");
+  src: asset_url("/assets/fonts/Telegraf-UltraBold.eot");
+  src: asset_url("/assets/fonts/Telegraf-UltraBold.eot?#iefix") format("embedded-opentype"), asset_url("/assets/fonts/Telegraf-UltraBold.woff2") format("woff2"), asset_url("/assets/fonts/Telegraf-UltraBold.woff") format("woff"), asset_url("/assets/fonts/Telegraf-UltraBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
