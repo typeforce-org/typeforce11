@@ -575,7 +575,7 @@ a {
 .site-header .eleven span:nth-of-type(2) {
   font-variation-settings: "wght" calc( 900 * var(--user-x,0.5) );
 }
-.site-header .apply-button {
+.site-header .submit-button {
   font-family: "Telegraf-UltraBold", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -586,50 +586,50 @@ a {
   z-index: 1;
   position: absolute;
   border-radius: 88px;
-  padding: 8px 31px 16px;
+  padding: 16px 31px 14px;
   border: 2px solid black;
   text-transform: lowercase;
 }
 @media screen and (min-width: 700px) {
-  .site-header .apply-button {
+  .site-header .submit-button {
     font-size: 126px;
     line-height: 0.9523809524;
   }
 }
-.site-header .apply-button:hover {
+.site-header .submit-button:hover {
   background: #000000;
   color: #ffffff;
 }
-.site-header .apply-button.-first {
+.site-header .submit-button.-first {
   top: 0;
   left: 0;
   transform: rotate(30deg) translate(-25%, -30%);
 }
-.site-header .apply-button.-second {
+.site-header .submit-button.-second {
   right: 0;
   top: 40%;
   transform: rotate(-45deg) translate(70%, -30%);
 }
-.site-header .apply-button.-third {
+.site-header .submit-button.-third {
   left: 50%;
   bottom: -10%;
   transform: rotate(-30deg) translate(-70%, -40%);
 }
 @media screen and (min-width: 700px) {
-  .site-header .apply-button {
-    padding: 8px 50px 18px;
+  .site-header .submit-button {
+    padding: 18px 50px 14px;
   }
-  .site-header .apply-button.-first {
+  .site-header .submit-button.-first {
     top: 0;
     left: 40%;
     transform: rotate(30deg) translate(-60%, 0);
   }
-  .site-header .apply-button.-second {
+  .site-header .submit-button.-second {
     top: 50%;
     right: 0%;
     transform: rotate(-30deg) translate(0, -50%);
   }
-  .site-header .apply-button.-third {
+  .site-header .submit-button.-third {
     display: none;
   }
 }

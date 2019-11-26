@@ -53,7 +53,7 @@
     }
   }
 
-  // Container for 11, also what we position apply buttons relative to
+  // Container for 11, also what we position submit buttons relative to
   .theater {
     height:  45vw;
     position: relative;
@@ -106,12 +106,12 @@
     }
   }
 
-  .apply-button {
+  .submit-button {
     @include font-h1;
     z-index: 1;
     position: absolute;
     border-radius: 88px;
-    padding: 8px 31px 16px;
+    padding: 16px 31px 14px;
     border: 2px solid black;
     text-transform: lowercase;
 
@@ -139,7 +139,7 @@
     }
 
     @include media-md {
-      padding: 8px 50px 18px;
+      padding: 18px 50px 14px;
 
       &.-first {
         top: 0;

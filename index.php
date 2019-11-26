@@ -55,9 +55,9 @@
       <div class="header-wrap">  
         <h1 class="title">Typeforce 11</h1>
         <div class="theater">
-          <a href="<?= $cta_url ?>" class="apply-button -first">Apply</a>
-          <a href="<?= $cta_url ?>" class="apply-button -second" aria-hidden="true" tabindex='-1'>Apply</a>
-          <a href="<?= $cta_url ?>" class="apply-button -third" aria-hidden="true" tabindex='-1'>Apply</a>
+          <a href="<?= $cta_url ?>" class="submit-button -first">Submit</a>
+          <a href="<?= $cta_url ?>" class="submit-button -second" aria-hidden="true" tabindex='-1'>Submit</a>
+          <a href="<?= $cta_url ?>" class="submit-button -third" aria-hidden="true" tabindex='-1'>Submit</a>
           <div class="eleven" aria-hidden="true">
             <span>1</span><span>1</span>
           </div>
