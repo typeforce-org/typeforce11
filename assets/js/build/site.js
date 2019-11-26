@@ -106,19 +106,19 @@ var Main = (function($) {
         if (now > lastMove + eventThrottle) {
           lastMove = now;
 
-          // Update debugging UI
-          if(displayCoords) {
-            $('.user-coords').empty().append('Gamma: '+event.gamma.toFixed(2)+'<br>userX: '+userX.toFixed(2)+'<br>Beta: '+event.beta.toFixed(2)+'<br>userY: '+userY.toFixed(2)+'<br>');
-          }
-
           // Adjust position based on phone's angles
           var gammaUnit = (event.gamma+45)/90; // 45deg rotation in either direction gives range [0,1]
-          var gammaUnitAdjusted = gammaUnit*2; // Maybe we want to vary more dramatically
-          userX = Math.min(Math.max( gammaUnitAdjusted ,0),1); // Create strict [0,1] limit
+          var gammaUnitAdjusted = gammaUnit/2+0.25; // Map to [.25,.75]
+          userX = Math.min(Math.max( gammaUnitAdjusted ,0),1); // Create strict [0,1] limit, jic
 
           var betaUnit = (event.beta)/90; // 0-90deg rotation gives range [0,1]
-          var betaUnitAdjusted = betaUnit*1; // Maybe we want to vary more dramatically
-          userY = Math.min(Math.max( betaUnitAdjusted ,0),1); // Create strict [0,1] limit
+          var betaUnitAdjusted = betaUnit; // No adjustment as of yet.
+          userY = Math.min(Math.max( betaUnitAdjusted ,0),1); // Create strict [0,1] limit, jic
+
+          // Update debugging UI
+          if(displayCoords) {
+            $('.user-coords').empty().append('Gamma: '+event.gamma.toFixed(2)+'<br>Unit: '+gammaUnit.toFixed(2)+'<br>Adjusted: '+gammaUnitAdjusted.toFixed(2)+'<br>userX: '+userX.toFixed(2)+'<br>Beta: '+event.beta.toFixed(2)+'<br>userY: '+userY.toFixed(2)+'<br>');
+          }
 
           // Let CSS know
           passUserCoordsToCSS();
