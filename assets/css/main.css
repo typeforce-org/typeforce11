@@ -542,7 +542,7 @@ a {
 }
 @media screen and (min-width: 700px) {
   .site-header .theater {
-    margin: 78px 0 0;
+    margin: 54px 0 0;
     height: calc(85vh - 204px);
   }
 }

@@ -10,7 +10,7 @@
   $ga_tracking = 'UA-998109-32';
   $twitter_handle = '@firebellydesign';
   $script_version = date_timestamp_get(date_create());
-  $cta_url = "#"
+  $cta_url = "submit/"
 ?>
 
 <!doctype html>
@@ -63,7 +63,6 @@
           </div>
         </div>
         <p class="announcement">
-          Submission<br>
           Deadline<br>
           1 — 3 — 20
         </p>
@@ -96,7 +95,7 @@
       <footer class="site-footer row">
         <div class="half module">
           <h2>Sponsors</h2>
-          <p><a href="http://www.publicmediainstitute.com/">Public Media Institute</a></p>
+          <p>Public Media Institute</p>
         </div>
         <div class="quarter module">
           <h2>Design</h2>

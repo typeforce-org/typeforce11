@@ -60,7 +60,7 @@
     margin: 72px 0 108px;
 
     @include media-md {
-      margin: 78px 0 0;
+      margin: 54px 0 0;
       height: calc(85vh - 204px); // The height needed to ensure the header is height 85vh
     }
   }
