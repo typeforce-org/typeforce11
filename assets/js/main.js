@@ -1,16 +1,12 @@
 var Main = (function($) {
 
   var screen_width = 0,
-      breakpoint_small = false,
-      breakpoint_medium = false,
-      breakpoint_large = false,
-      breakpoint_array = [480,600,1200],
       $document,
       documentElementStyle;
 
   // User sensor data
-  var userX = 0.5;
-  var userY = 0.5;
+  var userX = 0.8; // I just like the way 0.8,0.8 looks. Default there before user interaction
+  var userY = 0.8;
 
   // Debugging Options / Vars
   var enableAxis = false;
@@ -24,6 +20,8 @@ var Main = (function($) {
     $document = $(document);
     documentElementStyle = document.documentElement.style;
 
+    passUserCoordsToCSS();
+
     // Set screen size vars
     _resize();
 
@@ -32,9 +30,6 @@ var Main = (function($) {
 
     // Determine appropriate sensor
     initUserPositioning();
-
-    // Animate
-    // animate(); 
 
     // Esc handlers
     $(document).keyup(function(e) {
@@ -48,9 +43,6 @@ var Main = (function($) {
   // Called in quick succession as window is resized
   function _resize() {
     screenWidth = document.documentElement.clientWidth;
-    breakpoint_small = (screenWidth >= breakpoint_array[0]);
-    breakpoint_medium = (screenWidth >= breakpoint_array[1]);
-    breakpoint_large = (screenWidth >= breakpoint_array[2]);
   }
 
   // Built a bunch of debugging features that can be accessed by query strings
@@ -79,9 +71,8 @@ var Main = (function($) {
     if(displayBoxes) { $('body').addClass('debug-boxes'); }
   }
 
-
+  // Update CSS withour coords
   function passUserCoordsToCSS() {
-    // Update CSS
     documentElementStyle.setProperty('--user-x', userX);
     documentElementStyle.setProperty('--user-y', userY);
   }
@@ -93,13 +84,10 @@ var Main = (function($) {
     var lastMove = 0;
     var eventThrottle = 10;
 
-    console.log('Modernizr');
-    console.log(Modernizr);
-
     // UserX,Y will be given used to animate and will be read from accelerometers on devices that have those AND have touch screens
     // Otherwise we use mouse!
-    // Note: Many laptops have acclerometers (hence the necessity of detecting touch)
-    // It's not perfect but its the best I can figure to test...
+    // Note: Many laptops have accelerometers (hence the necessity of detecting touch)
+    // It's not perfect but its the best I can figure...
     if (window.DeviceOrientationEvent && Modernizr.touchevents) {
 
       window.addEventListener("deviceorientation", function (event) {
@@ -123,13 +111,9 @@ var Main = (function($) {
           var betaUnitAdjusted = betaUnit*1; // Maybe we want to vary more dramatically
           userY = Math.min(Math.max( betaUnitAdjusted ,0),1); // Create strict [0,1] limit
 
-
-          // Update CSS
-          documentElementStyle.setProperty('--user-x', userX);
-          documentElementStyle.setProperty('--user-y', userY);
+          // Let CSS know
+          passUserCoordsToCSS();
         }
-
-        passUserCoordsToCSS();
       }, false);
 
     } else {
@@ -169,46 +153,6 @@ var Main = (function($) {
       });
     }
   }
-
-  // // Render the scene
-  // function animate() {
-  //   animationStarted = true;
-
-  //   // Do this every time the system is ready to animate
-  //   requestAnimationFrame( animate );
-
-  // }
-
-  // // Linearly progresses a value to a desired valuse
-  // function rampToValue(desired,current,speed) {
-
-  //   // If we are within speed of desired value, just return desired value
-  //   if (desired < current+speed && desired > current-speed) {
-  //     return desired;
-  //   }
-
-  //   // If we are bigger, subtract speed
-  //   if (current > desired) {
-  //     return current - speed;
-  //   }
-
-  //   // If we are smaller, add speed
-  //   if (current < desired) {
-  //     return current + speed;
-  //   }
-  // }
-
-  // // Convenience function for converting degrees to radians
-  // function d2r(degrees) {
-  //   var radians = degrees * Math.PI/180;
-  //   return radians;
-  // }
-
-  // // Convenience function for converting radians to degrees
-  // function r2d(radians) {
-  //   var degrees = radians * 180/Math.PI;
-  //   return degrees;
-  // }
 
   // Public functions
   return {

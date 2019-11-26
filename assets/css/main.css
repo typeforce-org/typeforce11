@@ -374,14 +374,14 @@ table {
 }
 
 @font-face {
-  font-family: 'Telegraf-UltraBold';
-  src: url("/assets/fonts/Telegraf-UltraBold.otf");
+  font-family: 'variable-one';
+  src: url("/assets/fonts/variable-one.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'variable-one';
-  src: url("/assets/fonts/variable-one.ttf");
+  font-family: 'Telegraf-UltraBold';
+  src: url("/assets/fonts/Telegraf-UltraBold.otf");
   font-weight: normal;
   font-style: normal;
 }
@@ -449,15 +449,6 @@ table {
 @media screen and (min-width: 1200px) {
   .quarter {
     width: 25%;
-  }
-}
-
-.three-quarters {
-  width: 100%;
-}
-@media screen and (min-width: 1200px) {
-  .three-quarters {
-    width: 75%;
   }
 }
 
@@ -565,13 +556,13 @@ a {
   position: absolute;
   pointer-events: none;
   background-size: 150%;
-  background-clip: text;
-  font-family: 'variable-one';
-  -webkit-background-clip: text;
-  background-image: url("/assets/images/gradient.jpg");
   background-position: calc(100% * ( 1 - var(--user-x,0.8)) ) calc(100% * ( 1 - var(--user-y,0.8)) );
+  background-image: url("/assets/images/gradient.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
   line-height: 0.57;
   font-size: calc(45vw * 1.41);
+  font-family: 'variable-one';
 }
 @media screen and (min-width: 700px) {
   .site-header .eleven {
@@ -594,10 +585,10 @@ a {
   line-height: 1.1428571429;
   z-index: 1;
   position: absolute;
-  border: 2px solid black;
-  text-transform: lowercase;
   border-radius: 88px;
   padding: 8px 31px 16px;
+  border: 2px solid black;
+  text-transform: lowercase;
 }
 @media screen and (min-width: 700px) {
   .site-header .apply-button {
@@ -610,40 +601,40 @@ a {
   color: #ffffff;
 }
 .site-header .apply-button.-first {
-  transform: rotate(30deg) translate(-25%, -30%);
   top: 0;
   left: 0;
+  transform: rotate(30deg) translate(-25%, -30%);
 }
 .site-header .apply-button.-second {
-  transform: rotate(-45deg) translate(70%, -30%);
-  top: 40%;
   right: 0;
+  top: 40%;
+  transform: rotate(-45deg) translate(70%, -30%);
 }
 .site-header .apply-button.-third {
-  transform: rotate(-30deg) translate(-70%, -40%);
-  bottom: -10%;
   left: 50%;
+  bottom: -10%;
+  transform: rotate(-30deg) translate(-70%, -40%);
 }
 @media screen and (min-width: 700px) {
   .site-header .apply-button {
     padding: 8px 50px 18px;
   }
   .site-header .apply-button.-first {
-    transform: rotate(30deg) translate(-60%, 0);
     top: 0;
     left: 40%;
+    transform: rotate(30deg) translate(-60%, 0);
   }
   .site-header .apply-button.-second {
-    transform: rotate(-30deg) translate(0, -50%);
     top: 50%;
     right: 0%;
+    transform: rotate(-30deg) translate(0, -50%);
   }
   .site-header .apply-button.-third {
     display: none;
   }
 }
 
-@keyframes flicker {
+@keyframes rainbow-flicker {
   from {
     background-position: 0%;
   }
@@ -663,15 +654,14 @@ a {
     padding: 54px 72px 60px;
   }
 }
-.content-wrap a {
-  display: inline-block;
-}
-.content-wrap a:hover {
+
+.site-main a:hover, .site-footer a:hover {
   color: transparent;
-  -webkit-background-clip: text;
-  background-image: url("/assets/images/gradient.jpg");
   background-size: 300%;
-  animation: flicker 0.4s infinite linear;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow-flicker 0.4s infinite linear;
+  background-image: url("/assets/images/gradient.jpg");
 }
 
 .site-main {

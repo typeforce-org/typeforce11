@@ -1,14 +1,8 @@
 // Typography
 
 // Fonts
-@font-face {
-  font-family: 'Telegraf-UltraBold';
-  src: url('/assets/fonts/Telegraf-UltraBold.otf');
-  font-weight: normal;
-  font-style: normal;
-}
 
-// Fonts
+// The crazy variable font for 11 (contains only single glyph)
 @font-face {
   font-family: 'variable-one';
   src: url('/assets/fonts/variable-one.ttf');
@@ -16,12 +10,18 @@
   font-style: normal;
 }
 
+// The sane one we use for content
+@font-face {
+  font-family: 'Telegraf-UltraBold';
+  src: url('/assets/fonts/Telegraf-UltraBold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
-$display: 'Telegraf-UltraBold', sans-serif;
-
+$content: 'Telegraf-UltraBold', sans-serif;
 
 @mixin font-h1 {
-  font-family: $display;
+  font-family: $content;
   font-weight: normal;
   font-style: normal;
   text-transform: none;
@@ -36,7 +36,7 @@ $display: 'Telegraf-UltraBold', sans-serif;
 }
 
 @mixin font-p {
-  font-family: $display;
+  font-family: $content;
   font-weight: normal;
   font-style: normal;
   text-transform: none;
@@ -46,7 +46,7 @@ $display: 'Telegraf-UltraBold', sans-serif;
 }
 
 @mixin font-p2 {
-  font-family: $display;
+  font-family: $content;
   font-weight: normal;
   font-style: normal;
   text-transform: none;
