@@ -3,7 +3,7 @@
 
 @keyframes fallback-glyph1 {
   0% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: 'wght' var(--max-11-weight, 600);
     background-position: 100% 100% ;
   }
 
@@ -13,7 +13,7 @@
   }
 
   50% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: 'wght' var(--max-11-weight, 600);
     background-position: 100% 0% ;
   }
 
@@ -29,7 +29,7 @@
   }
 
   25% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: 'wght' var(--max-11-weight, 600);
     background-position: 0% 0%;
   }
 
@@ -39,7 +39,7 @@
   }
 
   100% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: 'wght' var(--max-11-weight, 600);
     background-position: 0% 100%;
   }
 }

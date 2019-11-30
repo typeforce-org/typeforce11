@@ -554,6 +554,40 @@ body.-loaded .load-screen {
     background-size: 300%;
   }
 }
+:root {
+  --max-11-weight: 600;
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 13 / 10) {
+  :root {
+    --max-11-weight: 650;
+  }
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 14 / 10) {
+  :root {
+    --max-11-weight: 700;
+  }
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 15 / 10) {
+  :root {
+    --max-11-weight: 750;
+  }
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 16 / 10) {
+  :root {
+    --max-11-weight: 800;
+  }
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 17 / 10) {
+  :root {
+    --max-11-weight: 850;
+  }
+}
+@media screen and (min-width: 700px) and (min-aspect-ratio: 18 / 10) {
+  :root {
+    --max-11-weight: 900;
+  }
+}
+
 .site-header {
   min-height: 70vh;
   position: relative;
@@ -565,7 +599,6 @@ body.-loaded .load-screen {
 }
 @media screen and (min-width: 700px) {
   .site-header {
-    min-height: 85vh;
     min-height: auto;
     padding: 42px 0 60px;
   }
@@ -604,9 +637,9 @@ body.-loaded .load-screen {
     margin: 54px 0 0;
   }
 }
-@media screen and (min-width: 700px) and (min-aspect-ratio: 1 / 1) {
+@media screen and (min-width: 700px) and (min-aspect-ratio: 12 / 10) {
   .site-header .theater {
-    height: calc(85vh - 204px);
+    height: calc((98vh - 204px));
   }
 }
 
@@ -623,9 +656,9 @@ body.-loaded .load-screen {
   font-size: calc(60vw * 1.41);
   font-family: 'variable-one';
 }
-@media screen and (min-width: 700px) and (min-aspect-ratio: 1 / 1) {
+@media screen and (min-width: 700px) and (min-aspect-ratio: 12 / 10) {
   .site-header .eleven {
-    font-size: calc((85vh - 204px) * 1.41);
+    font-size: calc((98vh - 204px) * 1.41);
   }
 }
 
@@ -638,10 +671,10 @@ body.-loaded .load-screen {
   -webkit-background-clip: text;
 }
 .site-header .eleven span:nth-of-type(1) {
-  font-variation-settings: "wght" calc( 600 - (600 - 100) * var(--user-x,0.5) );
+  font-variation-settings: "wght" calc( var(--max-11-weight, 600) - (var(--max-11-weight, 600) - 100) * var(--user-x,0.5) );
 }
 .site-header .eleven span:nth-of-type(2) {
-  font-variation-settings: "wght" calc( 600 * var(--user-x,0.5) );
+  font-variation-settings: "wght" calc( var(--max-11-weight, 600) * var(--user-x,0.5) );
 }
 .site-header .submit-button {
   font-family: "Telegraf-UltraBold", sans-serif;
@@ -665,8 +698,8 @@ body.-loaded .load-screen {
   }
 }
 .site-header .submit-button:hover {
-  background: #000000;
   color: #ffffff;
+  background: #000000;
 }
 .site-header .submit-button.-first {
   top: 0;
@@ -866,7 +899,7 @@ body.debug-boxes .eleven span {
 
 @keyframes fallback-glyph1 {
   0% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: "wght" var(--max-11-weight, 600);
     background-position: 100% 100%;
   }
   25% {
@@ -874,7 +907,7 @@ body.debug-boxes .eleven span {
     background-position: 0% 0%;
   }
   50% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: "wght" var(--max-11-weight, 600);
     background-position: 100% 0%;
   }
   100% {
@@ -888,7 +921,7 @@ body.debug-boxes .eleven span {
     background-position: 100% 100%;
   }
   25% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: "wght" var(--max-11-weight, 600);
     background-position: 0% 0%;
   }
   50% {
@@ -896,7 +929,7 @@ body.debug-boxes .eleven span {
     background-position: 100% 0%;
   }
   100% {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: "wght" var(--max-11-weight, 600);
     background-position: 0% 100%;
   }
 }

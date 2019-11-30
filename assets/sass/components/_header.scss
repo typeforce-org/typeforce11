@@ -7,6 +7,21 @@
   }
 }  
 
+// For our big 11: Since we are dealing with a FONT rather than an image, 
+// and the font-size is determined to fit a certain height (on md+), 
+// we size the WIDTH of the glyphs with font-weight.  
+// What's the maximum weight that will fit on any given aspect ratio?
+:root {
+  --max-11-weight: 600;
+  @include media-md {
+    @for $i from 1 through 6 {
+      @media (min-aspect-ratio: #{12+$i"/10"}) {
+        --max-11-weight: #{600+$i*50};
+      }
+    }
+  }
+}
+
 .site-header {
   min-height: 70vh;
   position: relative;
@@ -19,10 +34,8 @@
 
   // Position the background based on --user-x/y (provided by JS)
   background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
-  // animation: fallback-header-bg 4000ms infinite alternate;
 
   @include media-md {
-    min-height: 85vh;
     min-height: auto;
     padding: 42px 0 60px;
   }
@@ -54,17 +67,23 @@
     }
   }
 
+  // Heights for theater at different breakponts.  
+  // We'll be referencing these in .eleven as well to size the glyphs to the theater
+  $theater-height:  60vw;
+  $theater-height-md:  "(98vh - 204px)";
+
   // Container for 11, also what we position submit buttons relative to
   .theater {
-    height:  60vw;
+    height: $theater-height;
     position: relative;
     margin: 72px 0 108px;
 
     @include media-md {
       margin: 54px 0 0;
       
-      @media (min-aspect-ratio: #{"1/1"}) {
-        height: calc(85vh - 204px); // The height needed to ensure the header is height 85vh
+      // Behave as on mobile until screen is wide enough in terms of aspect ratio...
+      @media (min-aspect-ratio: #{"12/10"}) {
+        height: calc(#{$theater-height-md}); // The height needed to ensure the header is height 98vh
       }
     }
   }
@@ -78,18 +97,16 @@
     text-align: center;
     position: absolute;
     pointer-events: none;
-    // display: flex;
-    // justify-content: center;
 
     // Magic text sizing numbers to get the glyphs to be full height
     // (for more clarity, view in boxes debug mode by appending to URL: ?boxes=true)
     line-height: 0.57; // This line-height magically aligns the inline text to the container perfectly.
-    font-size: calc(60vw * 1.41); // 1.41 is a magic number, multiply it by container height to get the font-size
+    font-size: calc(#{$theater-height} * 1.41); // 1.41 is a magic number, multiply it by container height to get the font-size
 
     @include media-md {
 
-      @media (min-aspect-ratio: #{"1/1"}) {
-        font-size: calc((85vh - 204px) * 1.41); // The height needed to ensure the header is height 85vh
+      @media (min-aspect-ratio: #{"12/10"}) {
+        font-size: calc(#{$theater-height-md} * 1.41); // The height needed to ensure the header is height 98vh
       }
     }
 
@@ -99,8 +116,6 @@
 
     span {
       color: transparent;
-      // display: inline-block;
-
       background-size: 100vw;
       
       // Position the background based on --user-x/y (provided by JS)
@@ -112,12 +127,10 @@
       -webkit-background-clip: text; // Need both
 
       &:nth-of-type(1) {
-        font-variation-settings: 'wght' calc( 600 - (600 - 100) * var(--user-x,0.5) );
-        // animation: fallback-glyph1 4000ms infinite alternate linear;
+        font-variation-settings: 'wght' calc( var(--max-11-weight, 600) - (var(--max-11-weight, 600) - 100) * var(--user-x,0.5) );
       }
       &:nth-of-type(2) {
-        font-variation-settings: 'wght' calc( 600 * var(--user-x,0.5) );
-        // animation: fallback-glyph2 4000ms infinite alternate linear;
+        font-variation-settings: 'wght' calc( var(--max-11-weight, 600) * var(--user-x,0.5) );
       }
     }
   }
@@ -132,8 +145,8 @@
     text-transform: lowercase;
 
     &:hover {
-      background: $black;
       color: $white;
+      background: $black;
     }
 
     &.-first {
