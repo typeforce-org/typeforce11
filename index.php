@@ -1,7 +1,7 @@
 <?php
   $title = 'Typeforce 11';
   $description = 'Typeforce 11: the annual Chicago-based exhibit celebrating type is now open for submissions.';
-  $image = 'http://typeforce.com/11/assets/images/social-media-sharing.jpg';
+  $image = 'http://typeforce.com/11/assets/images/social-media-sharing.png';
   $imageW = 2400;
   $imageH = 1350;
   $url = 'http://typeforce.com/11/';
