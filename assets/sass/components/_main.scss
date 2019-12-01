@@ -27,7 +27,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: rainbow-flicker 0.4s infinite linear;
-    background-image: url('/assets/images/gradient.jpg');
+    background-image: url('../images/gradient.jpg');
 
     &::after {
       bottom: -3px;
@@ -37,7 +37,7 @@
       content: '';
       position: absolute;
       animation: rainbow-flicker 0.4s infinite linear;
-      background-image: url('/assets/images/gradient.jpg');
+      background-image: url('../images/gradient.jpg');
     }
   }
 }

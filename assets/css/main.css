@@ -375,14 +375,14 @@ table {
 
 @font-face {
   font-family: 'variable-one';
-  src: url("assets/fonts/variable-one.ttf");
+  src: url("../fonts/variable-one.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Telegraf-UltraBold';
-  src: url("assets/fonts/Telegraf-UltraBold.eot");
-  src: url("assets/fonts/Telegraf-UltraBold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Telegraf-UltraBold.woff2") format("woff2"), url("assets/fonts/Telegraf-UltraBold.woff") format("woff"), url("assets/fonts/Telegraf-UltraBold.ttf") format("truetype");
+  src: url("../fonts/Telegraf-UltraBold.eot");
+  src: url("../fonts/Telegraf-UltraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Telegraf-UltraBold.woff2") format("woff2"), url("../fonts/Telegraf-UltraBold.woff") format("woff"), url("../fonts/Telegraf-UltraBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -593,7 +593,7 @@ body.-loaded .load-screen {
   position: relative;
   padding: 36px 0 60px;
   background-size: 200%;
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
   animation: background-zoom 3s infinite linear alternate;
   background-position: calc(100% * var(--user-x,0.8)) calc(100% * var(--user-y,0.8));
 }
@@ -666,7 +666,7 @@ body.-loaded .load-screen {
   color: transparent;
   background-size: 100vw;
   background-position: calc(100% * ( 1 - var(--user-x,0.8)) ) calc(100% * ( 1 - var(--user-y,0.8)) );
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -778,7 +778,7 @@ body.-loaded .load-screen {
   background-clip: text;
   -webkit-background-clip: text;
   animation: rainbow-flicker 0.4s infinite linear;
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
 }
 .site-main a:hover::after, .site-footer a:hover::after {
   bottom: -3px;
@@ -788,7 +788,7 @@ body.-loaded .load-screen {
   content: '';
   position: absolute;
   animation: rainbow-flicker 0.4s infinite linear;
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
 }
 
 .site-main {

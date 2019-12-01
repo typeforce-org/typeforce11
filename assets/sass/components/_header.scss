@@ -5,11 +5,11 @@
   to {
     background-size: 300%;
   }
-}  
+}
 
-// For our big 11: Since we are dealing with a FONT rather than an image, 
-// and the font-size is determined to fit a certain height (on md+), 
-// we size the WIDTH of the glyphs with font-weight.  
+// For our big 11: Since we are dealing with a FONT rather than an image,
+// and the font-size is determined to fit a certain height (on md+),
+// we size the WIDTH of the glyphs with font-weight.
 // What's the maximum weight that will fit on any given aspect ratio?
 :root {
   --max-11-weight: 600;
@@ -27,7 +27,7 @@
   position: relative;
   padding: 36px 0 60px;
   background-size: 200%;
-  background-image: url('/assets/images/gradient.jpg');
+  background-image: url('../images/gradient.jpg');
 
   // Give a little motion to the bg for life when the mouse isn't moving
   animation: background-zoom 3s infinite linear alternate;
@@ -67,7 +67,7 @@
     }
   }
 
-  // Heights for theater at different breakponts.  
+  // Heights for theater at different breakponts.
   // We'll be referencing these in .eleven as well to size the glyphs to the theater
   $theater-height:  60vw;
   $theater-height-md:  "(98vh - 204px)";
@@ -80,7 +80,7 @@
 
     @include media-md {
       margin: 54px 0 0;
-      
+
       // Behave as on mobile until screen is wide enough in terms of aspect ratio...
       @media (min-aspect-ratio: #{"12/10"}) {
         height: calc(#{$theater-height-md}); // The height needed to ensure the header is height 98vh
@@ -111,18 +111,18 @@
     }
 
 
-    // Playing with variable fonts. Neat! 
+    // Playing with variable fonts. Neat!
     font-family: 'variable-one'; // Will built a custom variable font file.
 
     span {
       color: transparent;
       background-size: 100vw;
-      
+
       // Position the background based on --user-x/y (provided by JS)
       background-position: calc(100% * ( 1 - var(--user-x,0.8)) ) calc(100% * ( 1 - var(--user-y,0.8)) );
 
       // Clip text!
-      background-image: url('/assets/images/gradient.jpg');
+      background-image: url('../images/gradient.jpg');
       background-clip: text;
       -webkit-background-clip: text; // Need both
 
@@ -152,19 +152,19 @@
     &.-first {
       top: 0;
       left: 0;
-      transform: rotate(30deg)  translate(-25%,-30%); 
+      transform: rotate(30deg)  translate(-25%,-30%);
     }
 
     &.-second {
       right: 0;
       top: 40%;
-      transform: rotate(-45deg) translate(70%,-30%); 
+      transform: rotate(-45deg) translate(70%,-30%);
     }
 
     &.-third {
       left: 50%;
       bottom: -10%;
-      transform: rotate(-30deg) translate(-70%,-40%); 
+      transform: rotate(-30deg) translate(-70%,-40%);
     }
 
     @include media-md {
@@ -173,7 +173,7 @@
       &.-first {
         top: 20%;
         left: -7%;
-        transform: translate(0,0) rotate(30deg); 
+        transform: translate(0,0) rotate(30deg);
       }
 
       &.-second {
@@ -193,7 +193,7 @@
       &.-first {
         top: 0;
         left: 30%;
-        transform: translate(-30%,-50%) rotate(30deg); 
+        transform: translate(-30%,-50%) rotate(30deg);
       }
 
       &.-second {
