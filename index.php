@@ -53,7 +53,7 @@
   <body>
     <div class="load-screen" aria-hidden="true"><div class="load-text">Loading...</div></div>
     <header class="site-header">
-      <div class="header-wrap">  
+      <div class="header-wrap">
         <h1 class="title">Typeforce 11</h1>
         <div class="theater">
           <a href="<?= $cta_url ?>" class="submit-button -first">Submit</a>
@@ -75,7 +75,7 @@
     <div class="content-wrap">
       <main class="site-main row">
         <div class="module half-lg">
-          <h2><a href="https://typeforce.com">Typeforce</a></h2>
+          <h2>Typeforce</h2>
           <p>An annual exhibit celebrating wildly talented, emerging typographic artists and designers.</p>
           <h2>Eligibility</h2>
           <p>All type and typography related entries are eligible. This is not a Typeface design exhibition, so please only include work that’s gallery friendly. Ideal submissions are a series of pieces or enough work to take up a 10'×10' wall. Submissions can be by anyone associated with the entry (studio or individual).</p>
