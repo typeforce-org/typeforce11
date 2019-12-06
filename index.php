@@ -108,7 +108,7 @@
           <p><a target="_blank" href="https://barefootfunk.com">Bryant Smith</a></p>
         </div>
         <div class="module quarter-lg third-md">
-          <p><a target="_blank" href="https://typeforce.com">©Typeforce <?= date("Y") ?></a></p>
+          <p>©Typeforce <?= date("Y") ?></p>
         </div>
       </footer>
     </div>
