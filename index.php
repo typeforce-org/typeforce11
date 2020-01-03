@@ -65,10 +65,10 @@
         </div>
         <p class="announcement">
           Deadline<br>
-          1 — 3 — 20<br>
+          1 — 8 — 20<br>
           <br>
           Opening Night<br>
-          2 — 21 — 20
+          2 — 28 — 20
         </p>
       </div>
     </header>
