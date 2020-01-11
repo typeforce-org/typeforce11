@@ -10,7 +10,34 @@
   $ga_tracking = 'UA-998109-32';
   $twitter_handle = '@firebellydesign';
   $script_version = date_timestamp_get(date_create());
-  $cta_url = "submit/"
+  $cta_url = "submit/";
+
+  $winners = [ // [winner,url]
+    ['Chad Reichert & Susan LaPorte','#'],
+    ['Adam Trowbridge','#'],
+    ['Adé Hogue','#'],
+    ['Aggie Toppins','#'],
+    ['Alexa Viscius','#'],
+    ['Andy Detskas','#'],
+    ['Cassie Tompkins','#'],
+    ['Chad Reichert','#'],
+    ['Coleman Collins','#'],
+    ['Crystal Zapata','#'],
+    ['Dylan Wells','#'],
+    ['Jessica Westbrook','#'],
+    ['JP Ramirez','#'],
+    ['K. James Henderson','#'],
+    ['Kyle Green','#'],
+    ['Kyle Letendre','#'],
+    ['Luke Dorman','#'],
+    ['Nermin Moufti','#'],
+    ['Nicky Mazur','#'],
+    ['Niels Post','#'],
+    ['Renata Graw','#'],
+    ['Satoru Nihei White','#'],
+    ['Tyler Deal','#'],
+    ['Yan Zhou','#'],
+  ];
 ?>
 
 <!doctype html>
@@ -56,20 +83,20 @@
       <div class="header-wrap">  
         <h1 class="title">Typeforce 11</h1>
         <div class="theater">
-          <a href="<?= $cta_url ?>" class="submit-button -first">Submit</a>
-          <a href="<?= $cta_url ?>" class="submit-button -second" aria-hidden="true" tabindex='-1'>Submit</a>
-          <a href="<?= $cta_url ?>" class="submit-button -third" aria-hidden="true" tabindex='-1'>Submit</a>
           <div class="eleven" aria-hidden="true">
             <span>1</span><span>1</span>
           </div>
         </div>
         <p class="announcement">
-          Deadline<br>
-          1 — 3 — 20<br>
-          <br>
           Opening Night<br>
-          2 — 21 — 20
+          2 — 28 — 20
         </p>
+        <div class="winners">
+          <h2>Artists</h2>
+          <ul >
+            <?php foreach ($winners as $winner) { echo '<li><a href="'.$winner[1].'">'.$winner[0].'</a></li>'; } ?>
+          </ul>
+        </div>
       </div>
     </header>
     <div class="content-wrap">
@@ -100,6 +127,7 @@
         <div class="module half-lg third-md">
           <h2>Sponsors</h2>
           <p><a href="http://www.lumpen.com/" target="_blank">Public Media Institute</a></p>
+          <p>Supported by <a href="https://chicago.aiga.org/" target="_blank">AIGA Chicago</a></p>
         </div>
         <div class="module quarter-lg third-md">
           <h2>Design</h2>

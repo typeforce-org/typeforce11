@@ -60,10 +60,14 @@
   }
 
   .announcement {
+    position: relative;
+    margin-top: 40px;
+
     @include media-md {
-      position: absolute;
       top: 0;
       left: 75%;
+      margin-top: 0;
+      position: absolute;
     }
   }
 
@@ -74,12 +78,15 @@
 
   // Container for 11, also what we position submit buttons relative to
   .theater {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    margin: (72px+24px) 0 108px;
     height: $theater-height;
-    position: relative;
-    margin: 72px 0 108px;
 
     @include media-md {
-      margin: 54px 0 0;
+      margin: (54px+24px) 0 0;
       
       // Behave as on mobile until screen is wide enough in terms of aspect ratio...
       @media (min-aspect-ratio: #{"12/10"}) {
@@ -131,6 +138,63 @@
       }
       &:nth-of-type(2) {
         font-variation-settings: 'wght' calc( var(--max-11-weight, 600) * var(--user-x,0.5) );
+      }
+    }
+  }
+
+  .winners {
+    margin-top: 60px;
+    padding: 0 36px;
+    min-height: $theater-height;
+    position: relative;
+
+    @include media-md {
+      // Behave as on mobile until screen is wide enough in terms of aspect ratio...
+      @media (min-aspect-ratio: #{"12/10"}) {
+        min-height: calc(#{$theater-height-md}); // The height needed to ensure the header is height 98vh
+      }
+    }
+
+    @include media-md {
+      padding: 0 72px;
+      margin-top: 168px;
+    }
+
+    h2 {
+      @include font-p;
+      color: $white;
+      text-align: center;
+
+      @include media-md {
+        text-align: left;
+      }
+    }
+
+    ul {
+      @include semantic-only-list;
+      @include font-h2;
+      margin-top: 30px;
+
+      @include media-md {
+        margin-top: 16px;
+      }
+
+      li {
+        display: inline;
+        &::before {
+          content: ' – '
+        }
+        &:first-child {
+          &::before {
+            content: '';
+          }
+        }
+      }
+
+      a {
+        &:hover {
+          color: $white;
+        }
       }
     }
   }
