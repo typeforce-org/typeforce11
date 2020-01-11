@@ -5,7 +5,7 @@
 // The crazy variable font for 11 (contains only single glyph)
 @font-face {
   font-family: 'variable-one';
-  src: url('/assets/fonts/variable-one.ttf');
+  src: url('../fonts/variable-one.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,11 +13,11 @@
 // The sane one we use for content
 @font-face {
   font-family: 'Telegraf-UltraBold';
-  src: url('/assets/fonts/Telegraf-UltraBold.eot');
-  src: url('/assets/fonts/Telegraf-UltraBold.eot?#iefix') format('embedded-opentype'),
-       url('/assets/fonts/Telegraf-UltraBold.woff2') format('woff2'),
-       url('/assets/fonts/Telegraf-UltraBold.woff') format('woff'),
-       url('/assets/fonts/Telegraf-UltraBold.ttf') format('truetype');
+  src: url('../fonts/Telegraf-UltraBold.eot');
+  src: url('../fonts/Telegraf-UltraBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Telegraf-UltraBold.woff2') format('woff2'),
+       url('../fonts/Telegraf-UltraBold.woff') format('woff'),
+       url('../fonts/Telegraf-UltraBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
