@@ -13,30 +13,29 @@
   $cta_url = "submit/";
 
   $winners = [ // [winner,url]
-    ['Chad Reichert & Susan LaPorte','#'],
-    ['Adam Trowbridge','#'],
-    ['Adé Hogue','#'],
-    ['Aggie Toppins','#'],
-    ['Alexa Viscius','#'],
-    ['Andy Detskas','#'],
-    ['Cassie Tompkins','#'],
-    ['Chad Reichert','#'],
-    ['Coleman Collins','#'],
-    ['Crystal Zapata','#'],
-    ['Dylan Wells','#'],
-    ['Jessica Westbrook','#'],
-    ['JP Ramirez','#'],
-    ['K. James Henderson','#'],
-    ['Kyle Green','#'],
-    ['Kyle Letendre','#'],
-    ['Luke Dorman','#'],
-    ['Nermin Moufti','#'],
-    ['Nicky Mazur','#'],
-    ['Niels Post','#'],
-    ['Renata Graw','#'],
-    ['Satoru Nihei White','#'],
-    ['Tyler Deal','#'],
-    ['Yan Zhou','#'],
+    'Alex Sanchez',
+    'Ariel Rudolph',
+    'Astha Thakkar',
+    'Brandon & Sir Charles',
+    'Colleen',
+    'David Wright & Hannah Mowrey',
+    'Elaine Lopez',
+    'Grace Harms',
+    'Heather Snyder Quinn',
+    'Holly Akkerman',
+    'Hope Meng',
+    'Hyeong Geun Song',
+    'Jennifer Farrell',
+    'Jeremy Hlinak',
+    'Jessica Mueller',
+    'Jim Zimmer',
+    'Span',
+    'Judy K Suh',
+    'Kaleb Dean',
+    'Kyle Eertmoed',
+    'Mia Cinelli',
+    'Mohamed Samir',
+    'Taekyeom Lee ',
   ];
 ?>
 
@@ -94,7 +93,7 @@
         <div class="winners">
           <h2>Artists</h2>
           <ul >
-            <?php foreach ($winners as $winner) { echo '<li><a href="'.$winner[1].'">'.$winner[0].'</a></li>'; } ?>
+            <?php foreach ($winners as $winner) { echo '<li>'.$winner.'</li>'; } ?>
           </ul>
         </div>
       </div>
