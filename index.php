@@ -1,6 +1,6 @@
 <?php
   $title = 'Typeforce 11';
-  $description = 'Typeforce 11: the annual Chicago-based exhibit celebrating type is now open for submissions.';
+  $description = 'Typeforce 11: An annual exhibit celebrating wildly talented, emerging typographic artists and designers.';
   $image = 'http://typeforce.com/11/assets/images/social-media-sharing.png';
   $imageW = 2400;
   $imageH = 1350;
@@ -103,8 +103,6 @@
         <div class="module half-lg">
           <h2>Typeforce</h2>
           <p>An annual exhibit celebrating wildly talented, emerging typographic artists and designers.</p>
-          <h2>Eligibility</h2>
-          <p>All type and typography related entries are eligible. This is not a Typeface design exhibition, so please only include work that’s gallery friendly. Ideal submissions are a series of pieces or enough work to take up a 10'×10' wall. Submissions can be by anyone associated with the entry (studio or individual).</p>
         </div>
         <div class="module quarter-lg two-thirds-md" id="contact">
           <h2>Contact</h2>
