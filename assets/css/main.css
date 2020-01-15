@@ -869,11 +869,11 @@ body.-loaded .load-screen {
   background-clip: text;
   -webkit-background-clip: text;
   animation: rainbow-flicker 0.4s infinite linear;
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
 }
 .site-main a:hover::after, .site-footer a:hover::after {
   animation: rainbow-flicker 0.4s infinite linear;
-  background-image: url("/assets/images/gradient.jpg");
+  background-image: url("../images/gradient.jpg");
 }
 
 .site-main {
