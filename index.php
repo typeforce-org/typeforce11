@@ -12,7 +12,7 @@
   $script_version = date_timestamp_get(date_create());
   $cta_url = "submit/";
 
-  $winners = [ // [winner,url]
+  $winners = [
     'Alex Sanchez',
     'Ariel Rudolph',
     'Astha Thakkar',
@@ -20,7 +20,7 @@
     'Colleen',
     'David Wright & Hannah Mowrey',
     'Elaine Lopez',
-    'Grace Harms',
+    'Grace Harms & Michael Correy & Michael Tapson',
     'Heather Snyder Quinn',
     'Holly Akkerman',
     'Hope Meng',
@@ -30,12 +30,12 @@
     'Jessica Mueller',
     'Jim Zimmer',
     'Span',
-    'Judy K Suh',
+    'Judy K Suh & Applebutter Animated',
     'Kaleb Dean',
     'Kyle Eertmoed',
     'Mia Cinelli',
     'Mohamed Samir',
-    'Taekyeom Lee ',
+    'Taekyeom Lee',
   ];
 ?>
 
